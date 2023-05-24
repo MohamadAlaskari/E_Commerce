@@ -21,14 +21,15 @@ import entities.Bestellung;
 import entities.Kunde;
 import entities.Mitarbeiter;
 
-public class E_shop_CUI {
+public class CUI {
+
 	private E_Shop sh;
 	private BufferedReader in;
 	private Kunde loggedkunde;
 	private Mitarbeiter loggedMitarbeiter;
 	private Bestellung aktuelleBestellung;
 
-	public E_shop_CUI() throws IOException {
+	public CUI() throws IOException {
 
 		sh = new E_Shop();
 		// Stream-Objekt fuer Texteingabe ueber Konsolenfenster erzeugen
@@ -483,14 +484,13 @@ public class E_shop_CUI {
 	public static void main(String[] args) throws IOException, MitarbeiterIDIstBenutztException,
 			ArtikelExistiertNichtException, AnzahlIsNichtDefiniertException, KundeIDistbenutztException,
 			NichtGenugArtikelVorhandenException, WarenkorbLeerException, VerlaufLeerException {
-		E_shop_CUI cui;
+		CUI cui;
 		try {
-			cui = new E_shop_CUI();
+			cui = new CUI();
 			cui.run();
 		} catch (IOException e) {
 			// e.printStackTrace();
 		}
 
 	}
-
 }
